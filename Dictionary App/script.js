@@ -1,7 +1,10 @@
+// apiUrl = https://api.dictionaryapi.dev/api/v2/entries/en/
+
 const apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/"
 const result = document.querySelector(".result")
 const sound = document.getElementById("sound")
 const button = document.getElementById("search-btn")
+const searchbox = document.querySelector(".search-box")
 
 button.addEventListener("click", () => {
     let inpword = document.getElementById("input-word").value
@@ -25,7 +28,7 @@ button.addEventListener("click", () => {
                 <p class="word-example">${data[0].meanings[0].definitions[0].example ? data[0].meanings[0].definitions[0].example : ""}<p>`
         // Getmeaning(inpword)
     }).catch((error)=>{
-        result.innerHTML= `<h3 class = "error"> *Couldn't find the word`
+        result.innerHTML= `<p class = "error"> *Couldn't find the word</p>`
         console.error(error)
     })
 })
