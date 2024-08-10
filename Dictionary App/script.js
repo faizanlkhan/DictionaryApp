@@ -17,16 +17,21 @@ button.addEventListener("click", () => {
                 </div>
                 <div class="details">
                     <p>${data[0].meanings[0].partOfSpeech}</p>
-                    <p>${data[0].phonetic}</p>
+                    <p>${data[0].phonetics[0].text}</p>
                 </div>
                 <p class="word-meaning">
                 ${data[0].meanings[0].definitions[0].definition}
                 </p>          
                 <p class="word-example">${data[0].meanings[0].definitions[0].example ? data[0].meanings[0].definitions[0].example : ""}<p>`
         // Getmeaning(inpword)
+    }).catch((error)=>{
+        result.innerHTML= `<h3 class = "error"> *Couldn't find the word`
+        console.error(error)
     })
 })
 
 function playSound(){
     sound.play();
 }
+
+// Hey there if you are reading this, I hope you have nice day
