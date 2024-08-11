@@ -30,7 +30,7 @@ async function getMeaning(word) {
 
 
     }).catch((error) => {
-        if (inpword.value.toLowerCase() === "motu" || "motuu" || "motuuu") {
+        if (["motu", "motuu", "motuuu"].includes(inpword.value.toLowerCase())) {
             result.innerHTML = `<p class = "error">Motu means you ><</p>`
             console.error(error)
         } else {
