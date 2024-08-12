@@ -34,7 +34,24 @@ async function getMeaning(word) {
             result.innerHTML = `<p class = "error">Motu means you ><</p>`
             console.error(error)
         } else if (["rida fatima", "rida"].includes(inpword.value.toLowerCase())) {
-            result.innerHTML = `<p class = "ridz">A motuu (cute) animal that sleeps day and night <3 </p>`
+            result.innerHTML = `
+            <div class="word">
+            <h3>Rida</h3>
+            <button onclick="playSound()">
+                            <i class="fa-solid fa-volume-high"></i>
+                            </button>
+                            </div>
+                            <div class="details">
+                            <p>Noun</p>
+                            <p>/rida/</p>
+                            </div>
+                            <p class="word-meaning">
+                            A motuu (cute) animal that sleeps day and night <3
+                            </p>          
+                            <p class="word-example">Rida eats a lot!<br>
+                            Even a night before exam Rida is not studying (she's lazy)
+                            <p>
+                            <p class="word-example"><p>`
             console.error(error)
         } else {
             result.innerHTML = `<p class = "error">*Could'nt find the word "${word}"</p>`
