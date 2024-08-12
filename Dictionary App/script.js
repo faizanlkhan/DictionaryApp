@@ -33,6 +33,9 @@ async function getMeaning(word) {
         if (["motu", "motuu", "motuuu"].includes(inpword.value.toLowerCase())) {
             result.innerHTML = `<p class = "error">Motu means you ><</p>`
             console.error(error)
+        } else if (["rida fatima", "rida"].includes(inpword.value.toLowerCase())) {
+            result.innerHTML = `<p class = "ridz">A motuu (cute) animal that sleeps day and night <3 </p>`
+            console.error(error)
         } else {
             result.innerHTML = `<p class = "error">*Could'nt find the word "${word}"</p>`
             console.error(error)
