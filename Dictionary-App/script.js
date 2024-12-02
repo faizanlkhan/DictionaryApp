@@ -50,32 +50,7 @@ async function getMeaning(word) {
         } else {
             result.innerHTML = `<p class="error">No data found for the word "${word}".</p>`;
         }
-    } catch (error) {
-        if (["motu", "motuu", "motuuu"].includes(inpword.value.toLowerCase())) {
-            result.innerHTML = `<p class="error">Motu means you ><</p>`;
-        } else if (["rida fatima", "rida"].includes(inpword.value.toLowerCase())) {
-            result.innerHTML = `
-                <div class="word">
-                    <h3>Rida</h3>
-                    <button onclick="playSound()">
-                        <i class="fa-solid fa-volume-high"></i>
-                    </button>
-                </div>
-                <div class="details">
-                    <p>Noun</p>
-                    <p>/rida/</p>
-                </div>
-                <p class="word-meaning">
-                    A motuu (cute) animal that sleeps day and night <3
-                </p>
-                <p class="word-example">
-                    Rida eats a lot!<br>
-                    Even a night before exam Rida is not studying (she's lazy)
-                </p>
-            `;
-        } else {
-            result.innerHTML = `<p class="error">*Couldn't find the word "${word}"</p>`;
-        }
+    }
         console.error('Error:', error);
     }
 }
