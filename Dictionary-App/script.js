@@ -6,7 +6,6 @@ const sound = document.getElementById("sound");
 
 async function getMeaning(word) {
     try {
-        // Fetch the data from the serverless function
         const response = await fetch(`${apiUrl}${encodeURIComponent(word)}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -14,7 +13,6 @@ async function getMeaning(word) {
         
         const data = await response.json();
 
-        // Check if data has the expected structure
         if (data && Array.isArray(data) && data[0]) {
             const wordData = data[0];
             const phonetics = wordData.phonetics && wordData.phonetics[0] ? wordData.phonetics[0] : {};
@@ -27,7 +25,6 @@ async function getMeaning(word) {
             const definition = meanings.definitions && meanings.definitions[0] ? meanings.definitions[0].definition : "No definition available";
             const example = meanings.definitions && meanings.definitions[0] && meanings.definitions[0].example ? meanings.definitions[0].example : "No example available";
 
-            // Update the UI with the data
             sound.src = phoneticAudio;
             result.innerHTML = `
                 <div class="word">
